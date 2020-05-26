@@ -2,5 +2,18 @@
   <h3><%= @task.title.capitalize %></h3>
   <p class="details"><%= @task.details %></p>
   <p>&nbsp;</p>
-  <p><%= link_to 'Back', tasks_path %></p>
+  <p><%= link_to tasks_path do %>
+      <i class="fas fa-arrow-left"></i> Back
+    <% end %>
+    &nbsp;  |  &nbsp;
+    <%= link_to edit_task_path do  %>
+      <i class="far fa-edit"></i> Edit
+    <% end %>
+        &nbsp;  |  &nbsp;
+    <%= link_to task_path(@task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } do %>
+      <i class="far fa-trash-alt"></i> Delete
+    <% end %>
+  </p>
 </div>
