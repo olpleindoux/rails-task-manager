@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>My Tasks: </h2>
+  <ul>
+    <% @tasks.each do |task| %>
+      <% if task.completed == true %>
+        <li><i class="far fa-calendar-check"></i> <%= link_to task.title.capitalize, task_path(task) %></li>
+      <% else %>
+        <li><i class="far fa-calendar"></i> <%= link_to task.title.capitalize, task_path(task) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
