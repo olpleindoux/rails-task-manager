@@ -1,5 +1,9 @@
 <div class="container">
-  <h3><%= @task.title.capitalize %></h3>
+  <% if @task.completed == true %>
+        <h3><i class="far fa-calendar-check"></i> <%= @task.title.capitalize %></h3>
+      <% else %>
+        <h3><i class="far fa-calendar"></i> <%= @task.title.capitalize %></h3>
+      <% end %>
   <p class="details"><%= @task.details %></p>
   <p>&nbsp;</p>
   <p><%= link_to tasks_path do %>
