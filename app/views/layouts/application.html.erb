@@ -4,15 +4,15 @@
     <title>RailsTaskManager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/0e0ea83938.js" crossorigin="anonymous"></script>
 
   </head>
 
   <body>
     <h1>Task Manager</h1>
     <%= yield %>
+    <script src="https://kit.fontawesome.com/0e0ea83938.js" crossorigin="anonymous"></script>
   </body>
 </html>
