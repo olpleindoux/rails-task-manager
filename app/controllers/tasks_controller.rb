@@ -12,6 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
+    authorize @task
     @task = Task.new(task_params)
     @task.save
 
