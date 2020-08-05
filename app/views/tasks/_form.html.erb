@@ -1,21 +1,38 @@
-<%= form_for(@task) do |f| %>
+<!-- %= simple_form_for(@task) do |f| %>
   <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    %= f.label :title %>
+    %= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :details %>
-    <%= f.text_area :details, class: 'form-control' %>
+    %= f.label :details %>
+    %= f.text_area :details, class: 'form-control' %>
   </div>
 
-  <% unless f.object.new_record? %>
+  % unless f.object.new_record? %>
     <div class="checkbox">
       <label>
-        <%= f.check_box :completed %> Mark as done
+        %= f.check_box :completed %> Mark as done
       </label>
     </div>
-  <% end %>
+  % end %>
 
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+  %= f.submit class: 'btn btn-primary' %>
+% end %>  -->
+
+
+<div class="form-group">
+  <%= simple_form_for(@task) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :title %>
+    <%= f.input :details, as: :text %>
+    <% unless f.object.new_record? %>
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :completed %> Mark as done
+        </label>
+      </div>
+    <% end %>
+    <%= f.button :submit, class:"btn btn-primary btn-block" %>
+  <% end -%>
+</div>
